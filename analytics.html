@@ -6,8 +6,14 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
-<!-- Auth button -->
-<div id="auth-button"></div>
+<aside class="Header-auth">
+  <div class="Header-embedApi">
+    <div class="gapi-analytics-auth-styles-signinbutton gapi-analytics-auth-styles-signinbutton:hover" title="Access Google Analytics">
+      <span id="auth-button"></span>
+    </div>
+  </div>
+  <a class="Header-logout" href="https://accounts.google.com/logout">Logout</a>
+</aside>
 <script>
   $(document).ready(function() {
     $('#auth-button').click(function() {
@@ -15,13 +21,16 @@
     });
   });	
 </script>
+
+<div id="view-selector-container"></div>
+
 <!-- Dash board -->
 <div id="Dashboard">
   <ul class="FlexGrid">
     <li class="FlexGrid-item">
 	  <header class="Titles">
 	    <h3 class="Title-main">Sessions</h3>
-	    <div class="Title-sub">This week</div>
+	    <div class="Title-sub">This Week</div>
 	  </header>
 	  <div id="chart-1-container">
 	  </div>
@@ -29,15 +38,13 @@
 	<li class="FlexGrid-item">
 	  <header class="Titles">
 	    <h3 class="Title-main">Session</h3>
-	    <div class="Title-sub">Last week</div>
+	    <div class="Title-sub">Last Week</div>
 	  </header>
 	  <div id="chart-2-container">
 	  </div>
 	</li>
   </ul>
 </div>
-
-<div id="view-selector-container"></div>
 
 <!-- Load the library. -->
 <script>
@@ -51,13 +58,16 @@
 
 <script>
 gapi.analytics.ready(function() {
-
+	
+  // Add a state class to the body when auth is successful.
+  gapi.analytics.auth.on('success', function() {
+	document.body.classList.add('is-authorized');  
+  });
+  
   // Authorize the user.
-  var CLIENT_ID = '427309973801-p4nk09b86don57clj8kh492l79ecjcj8.apps.googleusercontent.com';
-
   gapi.analytics.auth.authorize({
     container: 'auth-button',
-    clientid: CLIENT_ID,
+    clientid: '427309973801-p4nk09b86don57clj8kh492l79ecjcj8.apps.googleusercontent.com',
   });
 
   // Create the view selector.
