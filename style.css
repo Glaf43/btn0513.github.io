@@ -1,0 +1,45 @@
+ul.FlexGrid {
+	list-style-type: none;
+}
+
+#Dashboard{
+	background:hsla(0,0%,100%,.75);
+	border:1px solid hsla(0,0%,0%,.075);
+	border-radius:4px;
+	min-height:10em;
+	margin-bottom:1.5em;
+	max-width:52em;
+	padding:1.5em;
+	position:relative;
+	display:none
+}
+
+.FlexGrid{
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-flex-wrap:wrap;
+	-ms-flex-wrap:wrap;
+	flex-wrap:wrap;
+	list-style:none;
+	margin:0 0 -1.5em -1.5em;
+	padding:0
+}
+
+.FlexGrid-item{
+	-webkit-box-flex:1;
+	-webkit-flex:1 0 -webkit-calc(100% - 1.5em);
+	-ms-flex:1 0 calc(100% - 1.5em);
+	flex:1 0 calc(100% - 1.5em);
+	margin:0 0 1.5em 1.5em
+}
+
+.FlexGrid-item{
+	-webkit-flex-basis:360px;
+	-ms-flex-preferred-size:360px;
+	flex-basis:360px;
+	margin:0 0 2em 2em
+}
+
+<div class="gapi-analytics-auth-styles-signinbutton gapi-analytics-auth-styles-signinbutton:hover"
