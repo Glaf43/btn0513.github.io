@@ -2,16 +2,17 @@ ul.FlexGrid {
 	list-style-type: none;
 }
 
-#Dashboard{
+/** Dash board **/
+#Dashboard {
 	background:hsla(0,0%,100%,.75);
 	border:1px solid hsla(0,0%,0%,.075);
 	border-radius:4px;
 	min-height:10em;
-	margin-bottom:1.5em;
 	max-width:52em;
 	padding:1.5em;
 	position:relative;
-	display:none
+	display:none;
+	margin: 0 auto
 }
 
 .FlexGrid{
@@ -42,4 +43,82 @@ ul.FlexGrid {
 	margin:0 0 2em 2em
 }
 
-<div class="gapi-analytics-auth-styles-signinbutton gapi-analytics-auth-styles-signinbutton:hover"
+.Titles {
+	font-weight:300;
+	letter-spacing:-.03em;
+	line-height:1.2;
+	margin:0 0 1.5em;
+	word-spacing:.2em
+}
+.Titles-main,.Titles-sub {
+	color:inherit;
+	font:inherit;
+	margin:0
+}
+.Titles-main { font-size:1.4em }
+
+.Titles-sub {opacity:.6; margin-top:.2em }
+
+.Titles-action {
+	background:#f05721;
+	border-radius:.25em;
+	color:#fff;
+	display:inline-block;
+	font-weight:400;
+	margin-top:.8em;
+	padding:.3em .6em .2em;
+	vertical-align:.4em
+}
+.Titles-action:focus, .Titles-action:hover { text-decoration:none }
+
+.Titles--hero { color:#75787d }
+
+.Titles--hero .Titles-main { font-size:2.25em }
+
+.Titles--hero .Titles-sub { font-size:1.25em }
+
+div#view-selector-container {
+	margin: 0 auto;
+	display: block;
+}
+
+.Header-auth {
+	text-align:center
+}
+
+.Header-auth .gapi-analytics-auth-styles-signinbutton {
+	background:#f7991c;
+	border-radius:0;
+	display:block;
+	padding:1em 1.5em;
+	-webkit-transition:background-color .2s cubic-bezier(.4,0,.2,1);
+	transition:background-color .2s cubic-bezier(.4,0,.2,1);
+	width:auto
+}
+
+.Header-auth .gapi-analytics-auth-styles-signinbutton:hover {
+	background:#f05721;
+	cursor:pointer
+}
+
+.Site.is-authorized .Header-user { 
+	border-radius:.333em;
+	color:#bbb;
+	display:inline-block;
+	font-size:1.5em;
+	margin:-.833em -.5em -.333em;
+	padding:.333em .5em;
+	position:absolute;
+	right:1em;
+	text-align:right;
+	top:50% 
+}
+
+body.is-authorized .Header-user:hover {
+	background:rgba(0,0,0,.3);
+	color:#fff
+}
+
+body.is-authorized .Header-auth { 
+	display:none
+}
